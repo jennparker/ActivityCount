@@ -1,17 +1,20 @@
 package com.booisajerk.activitycount
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
+import android.view.*
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import java.util.*
+import android.widget.TextView
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -64,7 +67,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_camera -> {
-                // Handle the camera action
+                showAlertDialog()
             }
             R.id.nav_gallery -> {
 
@@ -124,5 +127,41 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         //display new value
         dipCount.setText(countInt.toString())
+    }
+
+    fun showAlertDialog() {
+        val alertDialog = AlertDialog.Builder(this).create()
+        alertDialog.setMessage(getRandomNumber().toString())
+        val title = TextView(this)
+        title.setText(R.string.random)
+        title.setPadding(10, 10, 10, 10)
+        title.gravity = Gravity.CENTER
+        title.textSize = 20F
+        alertDialog.setCustomTitle(title)
+
+        alertDialog.show()
+
+        val message = alertDialog.findViewById<TextView>(android.R.id.message)
+        message.gravity = Gravity.CENTER
+        message.textSize = 65F
+    }
+
+    fun getRandomNumber(): Int {
+        //get the count from the intent
+        //  val intent: Intent = Intent.getIntent("randomIntent")
+        // val count = intent.getIntExtra(TOTAL_COUNT,0)
+
+        //generate the random number
+        val random = Random()
+        var randomInt = 0
+
+        if (defaultRandomMax > 0) {
+            randomInt = random.nextInt(defaultRandomMax + 1)
+        }
+
+        //display the random number
+//        randomNumber.text = Integer.toString(randomInt)
+//        randomHeading.text = getString(R.string.random_generator_text, count)
+        return randomInt
     }
 }
