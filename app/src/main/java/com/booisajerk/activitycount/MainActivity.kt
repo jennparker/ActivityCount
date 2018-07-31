@@ -8,10 +8,15 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    var countInt: Int = 0
+    var defaultRandomMax = 20
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +24,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Not sure if I'll use this or not", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
 
@@ -80,5 +85,44 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    fun addSquatCount(view: View) {
+        //get the current count
+        var currentCount = squatCount.text.toString()
+        println("Squat count $currentCount")
+
+        //convert to int and increment
+        countInt = currentCount.toInt()
+        countInt++
+
+        //display new value
+        squatCount.setText(countInt.toString())
+    }
+
+    fun addPushUpCount(view: View) {
+        //get the current count
+        var currentCount = pushUpCount.text.toString()
+        println("Push up count $currentCount")
+
+        //convert to int and increment
+        countInt = currentCount.toInt()
+        countInt++
+
+        //display new value
+        pushUpCount.setText(countInt.toString())
+    }
+
+    fun addDipCount(view: View) {
+        //get the current count
+        var currentCount = dipCount.text.toString()
+        println("Dip count $currentCount")
+
+        //convert to int and increment
+        countInt = currentCount.toInt()
+        countInt++
+
+        //display new value
+        dipCount.setText(countInt.toString())
     }
 }

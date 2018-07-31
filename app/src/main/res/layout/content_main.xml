@@ -9,12 +9,118 @@
     tools:showIn="@layout/app_bar_main">
 
     <TextView
+        android:id="@+id/squatCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/default_count_text"
+        android:textColor="#D0C865"
+        android:textSize="95sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/pushUpCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:text="@string/default_count_text"
+        android:textColor="#A8AE6A"
+        android:textSize="95sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/dipCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_count_text"
+        android:textColor="#D2B33F"
+        android:textSize="95sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <Button
+        android:id="@+id/pushUpsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="#A8AE6A"
+        android:onClick="addPushUpCount"
+        android:text="@string/push_ups"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/squatCount"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <Button
+        android:id="@+id/squatsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="#D0C865"
+        android:elevation="9dp"
+        android:onClick="addSquatCount"
+        android:text="@string/squats"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintLeft_toRightOf="@id/pushUpsButton"
+        app:layout_constraintRight_toLeftOf="@id/dipsButton"
+        app:layout_constraintTop_toBottomOf="@+id/squatCount"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <Button
+        android:id="@+id/dipsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="8dp"
+        android:background="#D2B33F"
+        android:onClick="addDipCount"
+        android:text="@string/dips"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/squatCount"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/randomPickerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/random_text"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toTopOf="@id/randomButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/squatsButton" />
+
+    <Button
+        android:id="@+id/randomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:onClick="openRandomGenerator"
+        android:background="#D2B33F"
+        android:text="@string/random"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomPickerText" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

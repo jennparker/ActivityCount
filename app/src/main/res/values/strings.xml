@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">ActivityCount</string>
+    <string name="app_name">ActivityCounter</string>
+    <string name="squats">Squats</string>
+    <string name="push_ups">Push ups</string>
+    <string name="dips">Dips</string>
+    <string name="random">Random Goal</string>
+
+    <string name="default_count_text">0</string>
+    <string name="random_generator_text">Here is a random number between 1 and %1d.</string>
+    <string name="random_generator_subtext">Don\'t forget that you can always change the defaults in the settings menu.</string>
+    <string name="random_text">Feeling dangerous? We\'ll give you a random number of reps to do!</string>
+    <string name="title_activity_nav">NavActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
