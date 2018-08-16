@@ -19,4 +19,5 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="random_picker_nav_drawer">Pick Random Number</string>
+    <string name="title_activity_history">Activity History</string>
 </resources>

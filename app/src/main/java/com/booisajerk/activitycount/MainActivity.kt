@@ -1,9 +1,9 @@
 package com.booisajerk.activitycount
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import java.util.*
 import android.widget.TextView
-import com.booisajerk.activitycount.R.id.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -69,8 +68,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_camera -> {
                 showAlertDialog()
             }
-            R.id.nav_gallery -> {
-
+            R.id.nav_workout_history -> {
+                val intent = Intent(this, WorkoutHistory::class.java)
+                startActivity(intent)
             }
             R.id.nav_slideshow -> {
 
