@@ -7,14 +7,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class WorkoutHistoryViewHolder extends RecyclerView.ViewHolder {
 
-    private TextView textView;
+    private TextView dateTextView, activityOneTextView, activityTwoTextView, activityThreeTextView;
 
     public WorkoutHistoryViewHolder(final View itemView) {
         super(itemView);
-        textView = itemView.findViewById(R.id.activity_item);
+        dateTextView = itemView.findViewById(R.id.activity_item_date);
+        activityOneTextView = itemView.findViewById(R.id.activity_item_one);
+        activityTwoTextView = itemView.findViewById(R.id.activity_item_two);
+        activityThreeTextView = itemView.findViewById(R.id.activity_item_three);
     }
 
     public void bindData(final WorkoutHistoryViewModel viewModel) {
-        textView.setText(viewModel.getText());
+        dateTextView.setText(viewModel.getDateText());
+        activityOneTextView.setText(viewModel.getActivityOneText());
+        activityTwoTextView.setText(viewModel.getActivityTwoText());
+        activityThreeTextView.setText(viewModel.getActivityThreeText());
     }
 }
