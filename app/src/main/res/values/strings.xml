@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">ActivityCounter</string>
-    <string name="squats">Squats</string>
-    <string name="push_ups">Push ups</string>
-    <string name="dips">Dips</string>
+    <string name="activity_one">Squats</string>
+    <string name="activity_two">Push ups</string>
+    <string name="activity_three">Dips</string>
     <string name="random">Random Goal</string>
 
     <string name="default_count_text">0</string>
